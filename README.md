@@ -1,4 +1,6 @@
 # EXOT
 
 ## Update
-The dataset RMOT-223 will be released in October, 2023.
+Sorry for the delay.
+The RMOT-223 dataset will be released in January, 2024.
+Currently working on other projects...
