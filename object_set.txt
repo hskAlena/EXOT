@@ -1,0 +1,38 @@
+		Test 		Val 		Train
+TomatoSoupCan	0				0
+Bus		0		0		0
+Eggplant	0		0		0
+# PurpleCylinder	0		0		0
+TennisBall	0				0
+FireTruck	0		0		0
+OrangeBall	0
+BlueCup		0		0
+Potato		0		0		0
+Brick				0		0
+Pringles			0		0
+BlueBall			0		0
+BeigeBlock					0
+# Popcorn						0
+# Cup						0
+Spam						0
+# Spoon						0
+
+
+object across = 10 * (human, auto)* (train, val, test) * 2 = 120
+<TomatoSoupCan, OrangeBall, Pringles, Bus, PurpleCylinder, Spam, BlueBall, BeigeCube, FireTruck, TennisBall>
+
+novel object = 2 * (test, val) * (human, auto) * 2 = 16
+<BlueCup, Brick>
+<Potato, Eggplant>
+
+136 (mp4) * 400 = 54,400 img. 
+
+6 tries / object (human, auto)
+
+220820 - human
+TomatoSoupCan
+Pringles
+TennisBall
+FireTruck
+BeigeCube
+PurpleCylinder
