@@ -52,14 +52,11 @@ def parse_args_jup(args):
 
 def _results_exist(seq, tracker):
     if seq.object_ids is None:
-        if seq.dataset in ['trackingnet', 'got10k']:
-            base_results_path = os.path.join(tracker.results_dir, seq.dataset, seq.name)
-            bbox_file = '{}.txt'.format(base_results_path)
-        # elif seq.dataset in ['robot']:
+        # if seq.dataset in ['robot']:
         #     name = '-'.join(['/'.join(seq.name.split('/')[:-2]), *seq.name.split('/')[-2:]])
         #     base_results_path = os.path.join(tracker.results_dir, name)
-        else:
-            bbox_file = '{}/{}.txt'.format(tracker.results_dir, seq.name)
+        # else:
+        bbox_file = '{}/{}.txt'.format(tracker.results_dir, seq.name)
         return os.path.isfile(bbox_file)
     else:
         bbox_files = ['{}/{}_{}.txt'.format(tracker.results_dir, seq.name, obj_id) for obj_id in seq.object_ids]

@@ -10,22 +10,9 @@ class EnvSettings:
         self.segmentation_path = '{}/segmentation_results/'.format(test_path)
         self.network_path = '{}/networks/'.format(test_path)
         self.result_plot_path = '{}/result_plots/'.format(test_path)
-        self.otb_path = ''
-        self.nfs_path = ''
-        self.uav_path = ''
-        self.tpl_path = ''
-        self.vot_path = ''
-        self.got10k_path = ''
-        self.lasot_path = ''
-        self.trackingnet_path = ''
-        self.davis_dir = ''
-        self.youtubevos_dir = ''
         self.robot_path = ''
         self.trek150_path = ''
 
-        self.got_packed_results_path = ''
-        self.got_reports_path = ''
-        self.tn_packed_results_path = ''
 
 
 def create_default_local_file():
@@ -62,25 +49,8 @@ class EnvSettings_ITP:
         self.segmentation_path = os.path.join(save_dir, 'test/segmentation_results')
         self.network_path = os.path.join(save_dir, 'test/networks')
         self.result_plot_path = os.path.join(save_dir, 'test/result_plots')
-        self.otb_path = os.path.join(data_dir, 'OTB2015')
-        self.nfs_path = os.path.join(data_dir, 'nfs')
-        self.uav_path = os.path.join(data_dir, 'UAV123')
-        self.tc128_path = os.path.join(data_dir, 'TC128')
-        self.tpl_path = ''
-        self.vot_path = os.path.join(data_dir, 'VOT2019')
-        self.got10k_path = os.path.join(data_dir, 'got10k')
-        self.got10k_lmdb_path = os.path.join(data_dir, 'got10k_lmdb')
-        self.lasot_path = os.path.join(data_dir, 'lasot')
-        self.lasot_lmdb_path = os.path.join(data_dir, 'lasot_lmdb')
-        self.trackingnet_path = os.path.join(data_dir, 'trackingNet')
         self.robot_path = os.path.join(data_dir, 'robot-data')
         self.trek150_path = os.path.join(data_dir, 'TREK-150')
-        self.davis_dir = ''
-        self.youtubevos_dir = ''
-
-        self.got_packed_results_path = ''
-        self.got_reports_path = ''
-        self.tn_packed_results_path = ''
 
 
 def create_default_local_file_ITP_test(workspace_dir, data_dir, save_dir):

@@ -11,21 +11,9 @@ def create_default_local_file():
         'workspace_dir': empty_str,
         'tensorboard_dir': 'self.workspace_dir + \'/tensorboard/\'',
         'pretrained_networks': 'self.workspace_dir + \'/pretrained_networks/\'',
-        'lasot_dir': empty_str,
-        'got10k_dir': empty_str,
         'trek150_dir': empty_str,
         'robot_dir': empty_str,
-        'trackingnet_dir': empty_str,
-        'coco_dir': empty_str,
-        'lvis_dir': empty_str,
-        'sbd_dir': empty_str,
-        'imagenet_dir': empty_str,
-        'imagenetdet_dir': empty_str,
-        'ecssd_dir': empty_str,
-        'hkuis_dir': empty_str,
-        'msra10k_dir': empty_str,
-        'davis_dir': empty_str,
-        'youtubevos_dir': empty_str})
+        })
 
     comment = {'workspace_dir': 'Base directory for saving network checkpoints.',
                'tensorboard_dir': 'Directory for tensorboard files.'}
@@ -52,26 +40,9 @@ def create_default_local_file_ITP_train(workspace_dir, data_dir):
         'workspace_dir': workspace_dir,
         'tensorboard_dir': os.path.join(workspace_dir, 'tensorboard'),    # Directory for tensorboard files.
         'pretrained_networks': os.path.join(workspace_dir, 'pretrained_networks'),
-        'lasot_dir': os.path.join(data_dir, 'lasot'),
-        'got10k_dir': os.path.join(data_dir, 'got10k'),
-        'lasot_lmdb_dir': os.path.join(data_dir, 'lasot_lmdb'),
-        'got10k_lmdb_dir': os.path.join(data_dir, 'got10k_lmdb'),
         'trek150_dir': os.path.join(data_dir, 'TREK-150'),
-        'trackingnet_dir': os.path.join(data_dir, 'trackingnet'),
-        'trackingnet_lmdb_dir': os.path.join(data_dir, 'trackingnet_lmdb'),
-        'coco_dir': os.path.join(data_dir, 'coco'),
-        'coco_lmdb_dir': os.path.join(data_dir, 'coco_lmdb'),
         'robot_dir': os.path.join(data_dir, 'robot-data'),
-        'lvis_dir': empty_str,
-        'sbd_dir': empty_str,
-        'imagenet_dir': os.path.join(data_dir, 'vid'),
-        'imagenet_lmdb_dir': os.path.join(data_dir, 'vid_lmdb'),
-        'imagenetdet_dir': empty_str,
-        'ecssd_dir': empty_str,
-        'hkuis_dir': empty_str,
-        'msra10k_dir': empty_str,
-        'davis_dir': empty_str,
-        'youtubevos_dir': empty_str})
+        })
 
     comment = {'workspace_dir': 'Base directory for saving network checkpoints.',
                'tensorboard_dir': 'Directory for tensorboard files.'}

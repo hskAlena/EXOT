@@ -39,27 +39,10 @@ if __name__ == "__main__":
     args = parse_args()
     data_dir = args.data_dir
     dataset_str = args.dataset_str
-    key_dict = {"got10k_lmdb": "train/list.txt",
-                "lasot_lmdb": "LaSOTBenchmark.json",
-                "coco_lmdb": "annotations/instances_train2017.json",
-                "vid_lmdb": "cache.json"}
+    
     print("Ready to pre load datasets")
     start = time.time()
     ps = []
-    datasets = []
-    if 'g' in dataset_str:
-        datasets.append("got10k_lmdb")
-    if 'l' in dataset_str:
-        datasets.append("lasot_lmdb")
-    if 'c' in dataset_str:
-        datasets.append("coco_lmdb")
-    if 'v' in dataset_str:
-        datasets.append("vid_lmdb")
-    for dataset in datasets:
-        lmdb_dir = os.path.join(data_dir, dataset)
-        p = mp.Process(target=target, args=(lmdb_dir, key_dict[dataset]))
-        print("add %s %s to job queue" % (lmdb_dir, key_dict[dataset]))
-        ps.append(p)
     # deal with trackingnet
     if 't' in dataset_str:
         trknet_dict = get_trknet_dict(os.path.join(data_dir, "trackingnet_lmdb"))
