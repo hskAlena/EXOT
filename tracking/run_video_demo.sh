@@ -17,9 +17,9 @@ python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data
 #  --epsilon 0.005 --avg_thres 10 --save_dir data/robot-data/data_RGB/final_test.txt ##0.4 \test_seq2.txt  \
 ################################################################################################
 
-#python tracking/video_demo.py exotst_tracker baseline_mix_lowdim --track_format run_video_robot \
-#  --modelname exot_merge --ckpt_name baseline_mix_lowdim/EXOTST_ep0105.pth.tar --neg_thres 0.05 --version h\
-#  --epsilon 0.005 --avg_thres 10 --save_dir data/robot-data/data_RGB/final_test.txt ##0.4 \test_seq2.txt  \
+python tracking/video_demo.py exotst_tracker baseline_mix_lowdim --track_format run_video_robot \
+  --modelname exot_merge --ckpt_name baseline_mix_lowdim/EXOTST_ep0105.pth.tar --neg_thres 0.05 --version h\
+  --epsilon 0.005 --avg_thres 10 --save_dir data/robot-data/data_RGB/final_test.txt ##0.4 \test_seq2.txt  \
 
 #python tracking/video_demo.py exotst_tracker baseline_mix_enc --track_format run_video_robot \
 #  --modelname exot_merge --ckpt_name baseline_mix_enc/EXOTST_ep0040.pth.tar --neg_thres 0.45 --version h\
@@ -28,7 +28,7 @@ python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data
 ###########################################################################################
 #python tracking/video_demo.py exotst_tracker baseline_mix_lowdim --track_format run_video_robot \
 #  --modelname exot_st2 --ckpt_name baseline_mix_lowdim/EXOTST_ep0069.pth.tar --neg_thres 0.1 --version h\
-#  --epsilon 0.005 --avg_thres 10 --save_dir data/robot-data/data_RGB/final_test.txt ##0.4 \test_seq2.txt  \
+# --epsilon 0.005 --avg_thres 10 --save_dir data/robot-data/data_RGB/final_test.txt ##0.4 \test_seq2.txt  \
 
 ####################################################################################################
 # python tracking/video_demo.py stark_st baseline_mix --track_format run_stark_robot \
@@ -63,6 +63,6 @@ python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data
 #  --modelname exot_st2 --ckpt_name cos_mix_lowdim/exotst1_250v1/EXOTST_epoch=71.pth.tar --neg_thres 0.05 --version h\
 #  --epsilon 0.005 --avg_thres 10 --save_dir data/TREK-150/test_seq2.txt 
 
-python tracking/video_demo.py stark_st baseline_mix --track_format run_video_annot_stark \
---modelname stark_st2 --ckpt_name baseline_mix/STARKST_epoch=49-v1.pth.tar --neg_thres 0.4 \
---epsilon 0.005 --avg_thres 20 --save_dir data/robot-data/data_RGB/test_seq2_0501.txt #test_seq2.txt  \
+#python tracking/video_demo.py stark_st baseline_mix --track_format run_video_annot_stark \
+#--modelname stark_st2 --ckpt_name baseline_mix/STARKST_epoch=49-v1.pth.tar --neg_thres 0.4 \
+#--epsilon 0.005 --avg_thres 20 --save_dir data/robot-data/data_RGB/test_seq2_0501.txt #test_seq2.txt  \

@@ -1233,7 +1233,7 @@ class Tracker:
         from basis import bs, bsr
         from Dependencies.urx_custom.robotiq_two_finger_gripper import Robotiq_Two_Finger_Gripper
         
-        robot = urx.Robot('192.168.1.66')
+        robot = urx.Robot('192.168.1.117')
         gripper = Robotiq_Two_Finger_Gripper(robot)
 
         params = self.get_parameters()
@@ -1257,7 +1257,7 @@ class Tracker:
         else:
             raise ValueError('Unknown multi object mode {}'.format(multiobj_mode))
 
-        robot.movej([2.7695469856262207, 1.3372728067585449, -1.7796506881713867, -4.625200887719625, -0.8506844679461878, 0.4674954414367676],acc=0.3,vel=0.3,relative=False, threshold =1)
+        robot.movej([3.0241410732269287, -1.5105140844928187, 1.2835197448730469, -1.3245752493487757, 4.727402687072754, 1.3158525228500366],acc=0.3,vel=0.3,relative=False, threshold =1)
         print("robot ready")
         
         # Configure depth and color streams
@@ -1583,7 +1583,7 @@ class Tracker:
         from basis import bs, bsr
         from Dependencies.urx_custom.robotiq_two_finger_gripper import Robotiq_Two_Finger_Gripper
 
-        robot = urx.Robot('192.168.1.66')
+        robot = urx.Robot('192.168.1.117')
         gripper = Robotiq_Two_Finger_Gripper(robot)
 
         params = self.get_parameters()

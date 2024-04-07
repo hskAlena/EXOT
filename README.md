@@ -2,7 +2,7 @@
 The official implementation of the **ICRA2023** paper [**EXOT: Exit-aware Object Tracker for Safe Robotic Manipulation of Moving Object**](https://arxiv.org/abs/2306.05262)
 
 ## Install the environment
-Use the Anaconda
+Use the [Anaconda](https://www.anaconda.com/)
 ```
 conda create -n exot python=3.8
 conda activate exot
@@ -12,7 +12,7 @@ bash install_exot.sh
 ## Data Preparation
 Put the tracking datasets in ./data. It should look like:
    ```
-   ${STARK_ROOT}
+   ${EXOT_ROOT}
     -- data
         -- TREK-150
             |-- P03
@@ -24,6 +24,11 @@ Put the tracking datasets in ./data. It should look like:
             	|-- auto
             	|-- human
    ```
+You can download TREK-150 dataset in [https://github.com/matteo-dunnhofer/TREK-150-toolkit](https://github.com/matteo-dunnhofer/TREK-150-toolkit).
+
+## Model Zoo & RMOT-223 Dataset
+The trained models and UR5e-made RMOT-223 dataset are provided in the [google drive](https://drive.google.com/drive/folders/1C75Q1t4bNeECwmxt7YUoPgIwYNyE4muu?usp=sharing).
+
 ## Set project paths
 Run the following command to set paths for this project
 ```
@@ -46,51 +51,25 @@ python tracking/train.py --script exot_st2 --config baseline_robot --save_dir . 
 python tracking/train.py --script exot_st1 --config baseline_robot --save_dir . --mode single  # EXOT Stage1
 python tracking/train.py --script exot_st2 --config baseline_robot --save_dir . --mode single --script_prv exot_st1 --config_prv baseline_robot  # EXOT Stage2
 ```
+Refer to `benchmarking/train_pl.sh` or `benchmarking/train.sh` for detailed commands.
+
 ## Test and evaluate EXOT on benchmarks
 
-- LaSOT
 ```
-python tracking/test.py stark_st baseline --dataset lasot --threads 32
-python tracking/analysis_results.py # need to modify tracker configs and names
+python tracking/test.py exotst_tracker baseline_mix_lowdim --dataset robot_test 
+python tracking/analysis_results.py --tracker_param baseline_mix_lowdim --dataset robot_test --name exotst_tracker
 ```
-- GOT10K-test
+For more config options and further details, see `benchmarking/test.sh`. 
+- Evaluate using UR5e robot 
 ```
-python tracking/test.py stark_st baseline_got10k_only --dataset got10k_test --threads 32
-python lib/test/utils/transform_got10k.py --tracker_name stark_st --cfg_name baseline_got10k_only
+python tracking/video_demo.py exotst_tracker baseline_mix_lowdim --track_format run_video_robot --modelname exot_merge
 ```
-- TrackingNet
-```
-python tracking/test.py stark_st baseline --dataset trackingnet --threads 32
-python lib/test/utils/transform_trackingnet.py --tracker_name stark_st --cfg_name baseline
-```
-- VOT2020  
-Before evaluating "STARK+AR" on VOT2020, please install some extra packages following [external/AR/README.md](external/AR/README.md)
-```
-cd external/vot20/<workspace_dir>
-export PYTHONPATH=<path to the stark project>:$PYTHONPATH
-bash exp.sh
-```
-- VOT2020-LT
-```
-cd external/vot20_lt/<workspace_dir>
-export PYTHONPATH=<path to the stark project>:$PYTHONPATH
-bash exp.sh
-```
-## Test FLOPs, Params, and Speed
-```
-# Profiling STARK-S50 model
-python tracking/profile_model.py --script stark_s --config baseline
-# Profiling STARK-ST50 model
-python tracking/profile_model.py --script stark_st2 --config baseline
-# Profiling STARK-ST101 model
-python tracking/profile_model.py --script stark_st2 --config baseline_R101
-# Profiling STARK-Lightning-X-trt
-python tracking/profile_model_lightning_X_trt.py
-```
+For more config options and further details, see `tracking/run_video_demo.sh`.
 
-## Model Zoo
-The trained models, the training logs, and the raw tracking results are provided in the [model zoo](MODEL_ZOO.md)
+## Making pick and place dataset using UR5e
+- For automatic creation of pick and place dataset using a hand camera with UR5e, see `data_preparation` folder.
+- For human collection of pick and place dataset, buy a 3D Mouse and a running program created by [Radalytica](https://www.universal-robots.com/plus/products/radalytica/3d-mouse-move/). 
+
 
 ## Acknowledgments
-* Thanks for the great [PyTracking](https://github.com/visionml/pytracking) Library, which helps us to quickly implement our ideas.
-* We use the implementation of the DETR from the official repo [https://github.com/facebookresearch/detr](https://github.com/facebookresearch/detr).  
+* We use the implementation of the STARK from the official repo [https://github.com/researchmm/Stark](https://github.com/researchmm/Stark).  

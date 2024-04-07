@@ -1,0 +1,5 @@
+data/
+checkpoints/
+wandb/
+__pycache__
+*.pyc

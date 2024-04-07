@@ -1,6 +1,6 @@
 echo "****************** Installing pytorch ******************"
 # python 3.7, 3.8, pytorch 1.10.2, torchvision 0.11.3
-# pyrealsense2 math3d
+# pyrealsense2 math3d==3.4.1
 echo ""
 echo ""
 echo "****************** Installing yaml ******************"

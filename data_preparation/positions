@@ -1,0 +1,30 @@
+handcam_top
+[2.97660493850708, 0.929119272822998, -0.49840831756591797, -5.308330675164694, -0.7955687681781214, 0.18806028366088867]
+
+left_init
+[2.976461887359619, -0.7628591817668458, 2.0093711058246058, -6.113685747186178, -0.7992356459247034, 0.1757826805114746]
+
+
+
+
+pipeline = rs.pipeline()
+    config = rs.config()
+    config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+    pipeline.start(config)
+    frames = pipeline.wait_for_frames()
+    
+    
+    while True:
+        frames = pipeline.wait_for_frames()
+        depth_frame = frames.get_depth_frame()
+        if not depth_frame:
+            continue
+
+        d_image = np.asanyarray(depth_frame.get_data())
+        d_crop=d_image[80: 80 + 300, 50: 50 + 560]
+        sample=d_crop/(d_crop.max()/255.0)
+        cv2.imshow('Stream.png', sample)
+        if cv2.waitKey(1) == ord("q"):
+            pipeline.stop()
+            cv2.destroyAllWindows()
+            break
