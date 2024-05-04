@@ -27,7 +27,7 @@ Put the tracking datasets in ./data. It should look like:
 You can download TREK-150 dataset in [https://github.com/matteo-dunnhofer/TREK-150-toolkit](https://github.com/matteo-dunnhofer/TREK-150-toolkit).
 
 ## Model Zoo & RMOT-223 Dataset
-The trained models and UR5e-made RMOT-223 dataset are provided in the [google drive](https://drive.google.com/drive/folders/1C75Q1t4bNeECwmxt7YUoPgIwYNyE4muu?usp=sharing).
+The trained models and UR5e-made RMOT-223 dataset are provided in the [https://huggingface.co/hsroro/EXOT](https://huggingface.co/hsroro/EXOT), [https://huggingface.co/datasets/hsroro/RMOT-223](https://huggingface.co/datasets/hsroro/RMOT-223).
 
 ## Set project paths
 Run the following command to set paths for this project
